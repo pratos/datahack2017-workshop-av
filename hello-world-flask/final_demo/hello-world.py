@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
@@ -13,7 +13,9 @@ def offerings(username=None):
 	return("Welcome {}, your sacrifice has been accepted by the Demo Gods!".format(username))
 
 
-@app.route('')
+@app.route('/webdemo')
+def webdemo():
+	return render_template('<img src="https://i.imgur.com/iZcUNxH.gifv" />')
 
 if __name__ == '__main__':
 	app.run(port=5000)
