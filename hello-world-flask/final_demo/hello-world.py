@@ -1,4 +1,5 @@
-from flask import Flask, render_template
+import os
+from flask import Flask
 
 app = Flask(__name__)
 
@@ -15,7 +16,7 @@ def offerings(username=None):
 
 @app.route('/webdemo')
 def webdemo():
-	return render_template('<img src="https://i.imgur.com/iZcUNxH.gifv" />')
+	return("Running on DigitalOcean!")
 
 if __name__ == '__main__':
 	app.run(port=5000)
