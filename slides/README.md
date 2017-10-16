@@ -4,3 +4,8 @@ __NOTE: These slides are prepared using [Dat Tran's](http://www.dat-tran.com/) g
 
 ### How to run the slides:
 ***
+- Setup the conda environment using the `datahack.yml` file: `conda env create -f datahack.yml`
+- `cd slides`
+- Run the command: `python run.py --file ./static/datahack_slides_first_draft.slides.html`
+- The `html slides` would be served at `localhost:9099`.
+- And you are done with the above steps!
