@@ -9,3 +9,6 @@ __NOTE: These slides are prepared using [Dat Tran's](http://www.dat-tran.com/) g
 - Run the command: `python run.py --file ./static/datahack_slides_first_draft.slides.html`
 - The `html slides` would be served at `localhost:9099`.
 - And you are done with the above steps!
+
+### If the above thing doesn't work:
+- Open up the html file directly, there's still an issue related to cache when you continue to render it via Flask.
