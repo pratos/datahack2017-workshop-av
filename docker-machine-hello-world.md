@@ -16,11 +16,27 @@ All this happens in your local system. In our use-case, we need to manage `machi
 
 To reference the various cloud providers, we have drivers: Listed [here](https://docs.docker.com/machine/drivers/)
 
-DigitalOcean Example: [Here](https://docs.docker.com/machine/examples/ocean/)
+`docker-machine` Example: [Here](https://docs.docker.com/machine/examples/ocean/)
 
-- Creating a `docker-machine`:
-    * `docker-machine create --driver digitalocean --digitalocean-access-token $DIGITALOCEAN_ACCESS_TOKEN --engine-install-url=https://web.archive.org/web/20170623081500/https://get.docker.com <machine-name,your choice>`
+- `docker-machine` on __DigitalOcean__:
+    * Login to your Digital Ocean account and navigate to the dashboard.
+    * Follow the steps below:
+        - ![](./screenshots/do1.png)
+        
+        - ![](./screenshots/do2.png)
+        
+        - ![](./screenshots/do3.png)
+        
+        - ![](./screenshots/do4.png)
+    * Add the key to `.bashrc`, `export DIGITALOCEAN_ACCESS_TOKEN=<api-key>`
+
+    * RUN: `docker-machine create --driver digitalocean --digitalocean-access-token $DIGITALOCEAN_ACCESS_TOKEN --engine-install-url=https://web.archive.org/web/20170623081500/https://get.docker.com <machine-name,your choice>`
     * More commands listed [here](https://docs.docker.com/machine/drivers/digital-ocean/)
+
+- `docker-machine` on __AWS__:
+    * Make sure you have your __AWS Credentials__ already setup. To setup those, visit [this link AWS CLI installation](http://docs.aws.amazon.com/cli/latest/userguide/installing.html) and [this link to configure your keys](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html)
+    * Run: `docker-machine create --driver amazonec2 --amazonec2-region us-east-1 --amazonec2-instance-type t2.micro --engine-install-url=https://web.archive.org/web/20170623081500/https://get.docker.com --amazonec2-open-port 5000 <machine-name,your choice>`
+
     
 - Listing all the `docker-machines`:
     * `docker-machine ls`
