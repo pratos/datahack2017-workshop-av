@@ -16,11 +16,13 @@ All this happens in your local system. In our use-case, we need to manage `machi
 
 To reference the various cloud providers, we have drivers: Listed [here](https://docs.docker.com/machine/drivers/)
 
-DigitalOcean Example: [Here](https://docs.docker.com/machine/examples/ocean/)
+Example: [Here](https://docs.docker.com/machine/examples/ocean/)
 
 - Creating a `docker-machine`:
-    * `docker-machine create --driver digitalocean --digitalocean-access-token $DIGITALOCEAN_ACCESS_TOKEN --engine-install-url=https://web.archive.org/web/20170623081500/https://get.docker.com <machine-name,your choice>`
+    * __FOR DO__:`docker-machine create --driver digitalocean --digitalocean-access-token $DIGITALOCEAN_ACCESS_TOKEN --engine-install-url=https://web.archive.org/web/20170623081500/https://get.docker.com <machine-name,your choice>`
     * More commands listed [here](https://docs.docker.com/machine/drivers/digital-ocean/)
+    
+    * __FOR AWS__: `docker-machine create --driver amazonec2 --amazonec2-region us-east-1 --amazonec2-instance-type t2.micro --engine-install-url=https://web.archive.org/web/20170623081500/https://get.docker.com  --amazonec2-open-port 5000 <name-of-the-machine>`
     
 - Listing all the `docker-machines`:
     * `docker-machine ls`
