@@ -32,6 +32,7 @@ To reference the various cloud providers, we have drivers: Listed [here](https:/
 
     * RUN: `docker-machine create --driver digitalocean --digitalocean-access-token $DIGITALOCEAN_ACCESS_TOKEN --engine-install-url=https://web.archive.org/web/20170623081500/https://get.docker.com <machine-name,your choice>`
     * More commands listed [here](https://docs.docker.com/machine/drivers/digital-ocean/)
+    * You can be generous in using this referral link: [Referrals](https://m.do.co/c/e771bc3fe004) to get $10 credits.
 
 - `docker-machine` on __AWS__:
     * Make sure you have your __AWS Credentials__ already setup. To setup those, visit [this link AWS CLI installation](http://docs.aws.amazon.com/cli/latest/userguide/installing.html) and [this link to configure your keys](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html)
