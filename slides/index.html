@@ -9,7 +9,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-<title>datahack_slides_first_draft slides</title>
+<title>slides slides</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -36,7 +36,7 @@ if( window.location.search.match( /print-pdf/gi ) ) {
 
 <!-- Loading the mathjax macro -->
 <!-- Load mathjax -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
     <!-- MathJax configuration -->
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -58,7 +58,7 @@ if( window.location.search.match( /print-pdf/gi ) ) {
     <!-- End of mathjax configuration -->
 
 <!-- Get Font-awesome from cdn -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.css">
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css">
 
 <style type="text/css">
     /*!
@@ -67,8 +67,8 @@ if( window.location.search.match( /print-pdf/gi ) ) {
 *
 */
 /*!
- * Bootstrap v3.3.7 (http://getbootstrap.com)
- * Copyright 2011-2016 Twitter, Inc.
+ * Bootstrap v3.3.6 (http://getbootstrap.com)
+ * Copyright 2011-2015 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
@@ -1163,6 +1163,7 @@ a:focus {
   text-decoration: underline;
 }
 a:focus {
+  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -2591,6 +2592,7 @@ select[size] {
 input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus {
+  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -3081,6 +3083,7 @@ select[multiple].input-lg {
 .btn.focus,
 .btn:active.focus,
 .btn.active.focus {
+  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -8811,9 +8814,6 @@ body > #header .header-bar {
     margin-left: 10px;
   }
 }
-[dir="rtl"] #ipython_notebook {
-  float: right !important;
-}
 #noscript {
   width: auto;
   padding-top: 16px;
@@ -9016,14 +9016,8 @@ span#login_widget > .button .badge,
  *
  * Author: Jupyter Development Team
  */
-[dir="rtl"] #tabs li {
-  float: right;
-}
 ul#tabs {
   margin-bottom: 4px;
-}
-[dir="rtl"] ul#tabs {
-  margin-right: 0px;
 }
 ul#tabs a {
   padding-top: 6px;
@@ -9046,16 +9040,6 @@ ul.breadcrumb span {
 }
 .list_toolbar .tree-buttons {
   padding-top: 1px;
-}
-[dir="rtl"] .list_toolbar .tree-buttons {
-  float: left !important;
-}
-[dir="rtl"] .list_toolbar .pull-right {
-  padding-top: 1px;
-  float: left !important;
-}
-[dir="rtl"] .list_toolbar .pull-left {
-  float: right !important;
 }
 .dynamic-buttons {
   padding-top: 3px;
@@ -9192,9 +9176,6 @@ ul.breadcrumb span {
 #tree-selector {
   padding-right: 0px;
 }
-[dir="rtl"] #tree-selector a {
-  float: right;
-}
 #button-select-all {
   min-width: 50px;
 }
@@ -9284,9 +9265,6 @@ ul#new-menu {
   left: auto;
   right: 0;
 }
-[dir="rtl"] #new-menu {
-  text-align: right;
-}
 .kernel-menu-icon {
   padding-right: 12px;
   width: 24px;
@@ -9331,9 +9309,6 @@ ul#new-menu {
 }
 #running .panel-group .panel .panel-body .list_container .list_item:last-child {
   border-bottom: 0px;
-}
-[dir="rtl"] #running .col-sm-8 {
-  float: right !important;
 }
 .delete-button {
   display: none;
@@ -9630,7 +9605,6 @@ div.cell.selected.jupyter-soft-selected {
   }
 }
 div.inner_cell {
-  min-width: 0;
   /* Old browsers */
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -9651,6 +9625,11 @@ div.inner_cell {
   box-flex: 1;
   /* Modern browsers */
   flex: 1;
+}
+@-moz-document url-prefix() {
+  div.inner_cell {
+    overflow-x: hidden;
+  }
 }
 /* input_area and input_prompt must match in top border and margin for alignment */
 div.input_area {
@@ -11321,7 +11300,7 @@ div#pager .ui-resizable-handle::after {
 }
 .shortcut_key {
   display: inline-block;
-  width: 21ex;
+  width: 20ex;
   text-align: right;
   font-family: monospace;
 }
@@ -11633,7 +11612,6 @@ ul.typeahead-list > li > a {
   box-shadow: 0px 0px 12px 1px rgba(87, 87, 87, 0.2);
 }
 .terminal-app .terminal {
-  width: 100%;
   float: left;
   font-family: monospace;
   color: white;
@@ -11647,9 +11625,6 @@ ul.typeahead-list > li > a {
 .terminal-app .terminal dummy-screen {
   line-height: 1em;
   font-size: 14px;
-}
-.terminal-app .terminal .xterm-rows {
-  padding: 10px;
 }
 .terminal-app .terminal-cursor {
   color: black;
@@ -11710,10 +11685,8 @@ ul.typeahead-list > li > a {
 .highlight .mh { color: #666666 } /* Literal.Number.Hex */
 .highlight .mi { color: #666666 } /* Literal.Number.Integer */
 .highlight .mo { color: #666666 } /* Literal.Number.Oct */
-.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
 .highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
 .highlight .sc { color: #BA2121 } /* Literal.String.Char */
-.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
 .highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
 .highlight .s2 { color: #BA2121 } /* Literal.String.Double */
 .highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
@@ -11724,11 +11697,9 @@ ul.typeahead-list > li > a {
 .highlight .s1 { color: #BA2121 } /* Literal.String.Single */
 .highlight .ss { color: #19177C } /* Literal.String.Symbol */
 .highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
-.highlight .fm { color: #0000FF } /* Name.Function.Magic */
 .highlight .vc { color: #19177C } /* Name.Variable.Class */
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
-.highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
 <style type="text/css">
@@ -11853,328 +11824,974 @@ a.anchor-link {
 
 <div class="reveal">
 <div class="slides">
-<section><section><div align="center">
-<div>
-    <h1 style="font-weight:bold">Machine Learning models in Production* using <br/>
-    <font color="#a70000">Flask</font> & <font color="#00534e">Docker</font></h1></div>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-</div></section></section><section><section><div align="center">
-<div>
-<h2 style="color:#a70000;font-weight:bold;">About me</h2>
-</div>
-<p>&nbsp;</p>
-<p style="font-weight:bold"><b>Prathamesh Sarang</b></p>
-<p style="color:#00534e;font-weight:bold"><b>Data Scientist @ Lemoxo Technologies</b></p>
-<p style="text-transform: lowercase; font-weight:bold"><b>Tweet me</b> <font color="#0088b2">@prthmshs</font></p>
-</div></section></section><section><section><div align="center">
-<div class="divider_h1">
-<h2 style="color:#a70000; font-weight:bold">Code and Slides for this talk</h2>
-</div>
-<p>&nbsp;</p>
-<h4 style="text-transform: lowercase;font-weight:bold;">Code: <font color="#0088b2">https://github.com/pratos/datahack2017-workshop-av (Still private)</font></h4>
-<h4 style="text-transform: lowercase;font-weight:bold">Slides: <font color="#00534e">https://pratos.github.io/datahack2017-workshop-av(Not published)</font></h4>
-</div></section></section><section><section><div class="divider_h1" align="center">
-<h1 style="font-weight:bold;"><font color="#5ea774">* WITH A REASON!<font></h1>
-</div></section></section><section><section><div align="center">
-<h2 style="font-weight:bold;">The night(<font color="red">production</font>) is dark(<font color="red">dependencies</font>) and full of terrors(<font color="red">bugs</font>)</h2>
-</div></section></section><section><section><div align="center">
-<h2 style="color:#a70000; font-weight:bold">Afterlife of a Machine Learning Model</h2>
+<aside class="notes">
 
-
-<img src="http://www.maicar.com/GML/000Iconography/Hermes/slides/smi160.jpg" height="500px" width="500px"/>
-<div></section></section><section><section><div align="center">
-<h2 style="color:#a70000; font-weight:bold">Structure of Hack Session</h2>
-</div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li><p>How <font color="#00534e" style="font-weight:bold;">Flask</font> can be used to create an end-point quickly.</p></li>
+<p>Hello everyone! My name is Amit Saha and today I am here to talk to about "Doing Math with Python".</p>
+<p>Thank you for coming to my talk - i know you could have chosen the other talk, so it's good to know that my talk's topic interests you.</p>
+<p>A bit about me - I am a software engineer at Freelancer.com in Sydney Australia.  I am a fairly regular writer for Linux Voice and other Linux magazines. And last, but not the least, I am the author of the book "Doing Math with Python" (not coincidentally titled the same as this talk - haha) published by No Starch Press in 2015.</p>
+<p>There is a link to my blog, GitHub, twitter, etc. so, if you want to learn more about my work or get in touch, those are the means to do so!</p>
+<p>Okay, so all that aside - let's start with the talk!</p>
+
+</div>
+</div>
+</div>
+</aside><section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="-Doing-Math-with-Python-"><center> Doing Math with Python </center><a class="anchor-link" href="#-Doing-Math-with-Python-">&#182;</a></h1><center>
+
+
+<p> <b>Amit Saha</b>
+
+<p>May 29, PyCon US 2016 Education Summit
+
+<p>Portland, Oregon
+</center>
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="About-me">About me<a class="anchor-link" href="#About-me">&#182;</a></h2><ul>
+<li><p>Software Engineer at <a href="https://www.freelancer.com">Freelancer.com</a> HQ in Sydney, Australia</p>
+</li>
+<li><p>Author of "Doing Math with Python" (No Starch Press, 2015)</p>
+</li>
+<li><p>Writes for Linux Voice, Linux Journal, and others.</p>
+</li>
+<li><p><a href="http://echorand.me">Blog</a>, <a href="http://github.com/amitsaha">GitHub</a></p>
+</li>
+</ul>
+<h4 id="Contact">Contact<a class="anchor-link" href="#Contact">&#182;</a></h4><ul>
+<li><p><a href="http://twitter.com/echorand">@echorand</a></p>
+</li>
+<li><p><a href="mailto:amitsaha.in@gmail.com">Email</a></p>
+</li>
 </ul>
 
-</div>
-</div>
-</div></div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li><p><font color="#00534e" style="font-weight:bold;">Demo</font> to wrap an ML Model.</p></li>
-</ul>
-
-</div>
-</div>
-</div></div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li><p><font color="#00534e" style="font-weight:bold;">Docker</font> and <font color="#00534e" style="font-weight:bold;">Docker Eco-System</font> basics</p></li>
-</ul>
-
-</div>
-</div>
-</div></div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li><p>Deploying the <font color="#00534e" style="font-weight:bold;">ML API</font></p></li>
-</ul>
-
-</div>
-</div>
-</div></div></section></section><section><section><div align="center">
-<h2 style="font-weight:bold;">To summarize things, we'll be playing <font color="#a70000">Professor Utonium</font> today!</h2>
-
-<img src="https://memegenerator.net/img/images/600x600/11556716/powerpuffgirls.jpg" />
-</div></section></section><section><section><div class="divider_h1" align="center">
-<h1 style="font-weight:bold;"><font color="#5ea774">DEMO: HELLO-WORLD<font></h1>
-</div></section></section><section><section><div align="center">
-<h2 style="color:#a70000; font-weight:bold;">Using Flask</h2>
-</div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Pros:">Pros:<a class="anchor-link" href="#Pros:">&#182;</a></h4><ul>
-<li><p>Pretty lightweight & easy to start with</p></li>
-</ul>
-
-</div>
-</div>
-</div></div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li><p>Great documentation.</p></li>
-</ul>
-
-</div>
-</div>
-</div></div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li><p>Nice little flask specific extras and flexibility to use other components.<p></li>
-</ul>
-
-</div>
-</div>
-</div></div></section><section><div align="center">
-<h2 style="color:#a70000; font-weight:bold;">Using Flask</h2>
-</div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Cons:">Cons:<a class="anchor-link" href="#Cons:">&#182;</a></h4><ul>
-<li><p>Implementing async is a problem since it isn't baked in the framework.</p></li>
-</ul>
-
-</div>
-</div>
-</div></div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li><p>Better, faster frameworks just to create web services like Falcon beat Flask hands down.</p></li>
-</ul>
-
-</div>
-</div>
-</div></div></section></section><section><section><div class="divider_h1" align="center">
-<h1 style="font-weight:bold;"><font color="#5ea774">DEMO:WRAPPING ML MODELS<font></h1>
-</div></section></section><section><section><div align="center">
-<h2 style="color:#a70000; font-weight:bold;">There are three important parts in constructing our wrapper function, <font color="black">apicall()</font></h2>
-</div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li><p>Getting the request data (for which predictions are to be made).</p></li>
-</ul>
-
-</div>
-</div>
-</div></div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li><p>Loading our pickled estimator.</p></li>
-</ul>
-
-</div>
-</div>
-</div></div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li><p><font color="#810000" style="font-weight:bold;">jsonify</font> our predictions and send the response back with status code: <font color="#810000" >200</font></p></li>
-</ul>
-
-</div>
-</div>
-</div></div></section></section><section><section><div class="divider_h1" align="center">
-    <h1 style="font-weight:bold;"><font color="#5ea774">WHY DOCKER?<font></h1>
-</div></section></section><section><section><div align="center">
-<h2 style="color:#a70000; font-weight:bold">My Docker Story</h2>
-
-
-<img src="https://i.ytimg.com/vi/203OAQYDKNw/maxresdefault.jpg" height="500px" width="600px"/>
-<div></section></section><section><section><div align="center">
-<h2 style="color:#a70000; font-weight:bold;">Learning Docker:Week 2</h2>
-
-
-<img src="http://pa1.narvii.com/6520/bef674a11cc0772b812cb91bbaa9082a4cea0285_hq.gif" height="400px" width="500px"/>
-<div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<div align="center">
-    <h3 style="color:#a70000; font-weight:bold;">Docker Basics</h3>
-    <p><b>Docker’s motto is: Build, Ship & Run everywhere.</b></p>
-    <img src="https://d3nmt5vlzunoa1.cloudfront.net/phpstorm/files/2015/10/large_v-trans.png" width="400px;" height="500px;"/>
-</div>
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<div align="center">
-    <h2 style="color:#a70000; font-weight:bold">Docker Terminology</h2>
-    <p><b style="color:#00534e;">Docker Containers:</b> Small user-level virtualization (isolation) that helps you install, build and run your code/workflow. All the code would be continuously running in these containers.</p>
+<center><font size="12"> Slides: https://doingmathwithpython.github.io/pycon-us-2016/</font> </center>
+<p>
+<p>
+<center><font size="12"> All presentation materials: https://github.com/doingmathwithpython</font></center>
+</div>
+</div>
+</div><aside class="notes">
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>So, what am I selling to you today? Not my book (I am, but in a subtle way). I am presenting an idea, a hypothesis or even making a statement - Python can lead to a more enriching learning and teaching experience in the classroom.</p>
+<p>Let me explain where I am coming from. When I think back about when I was learning to program and learning all other subjects in standards 7-10. I think it's true today as well. Programming and other subjects such as Math, Science are taught in a disconnected fashion. Programming seems to be all about finding the sum of a series or generating fibonacci numbers. Make no mistake, these exercises are what builds up the programming logic. Some students get really excited about being able to do these, but a lot of them don't.  It's a lot like not everyone gets interested in solving puzzles - i don't, i never took to them.</p>
+<p>I think I know of a way we could excite more students! Show them how you can write programs to do your homework, or experiment without having to go the science lab or setup elaborate experimental setups. This is my goal for today - in the following slides and notebooks, I will hypothesise on a way of connecting Python programming and other subjects. That will show that programming is a way to get real work done, not something to learn for the sake of it.</p>
+<p>We need some tools to help us on our quest. The Python community has some giant shoulders we can stand upon - Python 3, SymPy and matplotlib.</p>
 
 </div>
 </div>
 </div>
+</aside></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="This-talk---a-proposal,-a-hypothesis,-a-statement">This talk - a proposal, a hypothesis, a statement<a class="anchor-link" href="#This-talk---a-proposal,-a-hypothesis,-a-statement">&#182;</a></h3><p>What? <em>Python can lead to a more enriching learning and teaching experience in the classroom</em></p>
+<p>How? <em>Next slides</em></p>
+
+</div>
+</div>
 </div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<div align="center">
-<p><b style="color:#00534e;">Dockerfile:</b> It is a file from which Docker creates an image. It can be thought of as an automated script that has all the steps you want to execute.</p>
+<h3 id="Tools-(or,-Giant-shoulders-we-will-stand-on)">Tools (or, Giant shoulders we will stand on)<a class="anchor-link" href="#Tools-(or,-Giant-shoulders-we-will-stand-on)">&#182;</a></h3><p><img align="center" src="images/giant_shoulders_collage.jpg"></img></p>
+<p><em>Python 3</em>, <em>SymPy</em>, <em>matplotlib</em></p>
+<p>*Individual logos are copyright of the respective projects. <a href="http://www.orphancaremovement.org/standing-on-the-shoulder-of-giants/">Source</a> of the "giant shoulders" image.</p>
+
 </div>
 </div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><aside class="notes">
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<div align="center">
-<p><b style="color:#00534e;">Docker Images:</b> An image is an inert, immutable, file that’s essentially a snapshot of a container.</p>
+<p>Whose calculator looks like this?</p>
+<p>Who uses Python as a calculator? Raise of hands please!</p>
+<p>I do! Specifically, I use Python 3 because of 1/2=0 messes up my monthly expenditure calculation.</p>
+<p>Besides the usual addition and subtraction, we have of course the math module and more recently the statistics module which makes Python a worthy scientific calculator.</p>
+<p>But then, there's more! You are not limited to the functions from those libraries, you can write your own custom functions and make them available whenever you start your Python interpreter. How?</p>
+<p>Use PYTHONSTARTUP!</p>
+
 </div>
 </div>
 </div>
-</div></section></section><section><section><div align="center">
-    <h2 style="color:#810000; font-weight:bold;">Docker Architecture</h2>
-    <img src="https://docs.docker.com/engine/article-img/architecture.svg" height="600px;" width="850px;"/>
-</div></section></section><section><section><div class="divider_h1" align="center">
-<h1 style="font-weight:bold;"><font color="#5ea774">DEMO: DOCKER HELLO-WORLD<font></h1>
-</div></section></section><section><section><div class="divider_h1" align="center">
-<h1 style="font-weight:bold;"><font color="#5ea774">DEPLOYING AS WEB ENDPOINT<font></h1>
-</div></section></section><section><section><div align="center">
-<h2 style="color:#810000; font-weight:bold;">Introduction to docker-machine</h2>
+</aside></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Python---a-scientific-calculator">Python - a scientific calculator<a class="anchor-link" href="#Python---a-scientific-calculator">&#182;</a></h3><p>Whose calculator looks like this?</p>
+<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="p">(</span><span class="mi">131</span> <span class="o">+</span> <span class="mf">21.5</span> <span class="o">+</span> <span class="mf">100.2</span> <span class="o">+</span> <span class="mf">88.7</span> <span class="o">+</span> <span class="mf">99.5</span> <span class="o">+</span> <span class="mf">100.5</span> <span class="o">+</span> <span class="mf">200.5</span><span class="p">)</span><span class="o">/</span><span class="mi">4</span>
+<span class="mf">185.475</span>
+</pre></div>
+<p><em>Python 3 is my favorite calculator (not Python 2 because 1/2 = 0)</em></p>
+<p>Beyond basic operations:</p>
+
+</div>
+</div>
 </div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Docker provides us the easiest way to run our containers on public cloud platforms - AWS, Azure, Google Cloud Platform, etc.</p>
-</div>
-</div>
-</div></div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>You can do this via <font color="#00534e">docker-machine</font>. What <font color="#00534e">docker-machine</font> is:</p>
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>Docker Machine is a tool that lets you install Docker Engine on virtual hosts, and manage the hosts with <code>docker-machine</code> commands. You can use Machine to create Docker hosts on your local Mac or Windows box, on your company network, in your data center, or on cloud providers like Azure, AWS, or Digital Ocean. </li>
+<li><p><code>fabs()</code>, <code>abs()</code>, <code>sin()</code>, <code>cos()</code>, <code>gcd()</code>, <code>log()</code> and more (See <a href="https://docs.python.org/3/library/math.html">math</a>)</p>
+</li>
+<li><p>Descriptive statistics (See <a href="https://docs.python.org/3/library/statistics.html#module-statistics">statistics</a>)</p>
+</li>
 </ul>
+
+</div>
+</div>
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Python---a-scientific-calculator">Python - a scientific calculator<a class="anchor-link" href="#Python---a-scientific-calculator">&#182;</a></h3><ul>
+<li><p>Develop your own functions: unit conversion, finding correlation, .., anything really</p>
+</li>
+<li><p>Use PYTHONSTARTUP to extend the battery of readily available mathematical functions</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="err">$</span> <span class="n">PYTHONSTARTUP</span><span class="o">=~/</span><span class="n">work</span><span class="o">/</span><span class="n">dmwp</span><span class="o">/</span><span class="n">pycon</span><span class="o">-</span><span class="n">us</span><span class="o">-</span><span class="mi">2016</span><span class="o">/</span><span class="n">startup_math</span><span class="o">.</span><span class="n">py</span> <span class="n">idle3</span> <span class="o">-</span><span class="n">s</span>
+</pre></div>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Unit-conversion-functions">Unit conversion functions<a class="anchor-link" href="#Unit-conversion-functions">&#182;</a></h3><div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">unit_conversion</span><span class="p">()</span>
+<span class="mf">1.</span> <span class="n">Kilometers</span> <span class="n">to</span> <span class="n">Miles</span>
+<span class="mf">2.</span> <span class="n">Miles</span> <span class="n">to</span> <span class="n">Kilometers</span>
+<span class="mf">3.</span> <span class="n">Kilograms</span> <span class="n">to</span> <span class="n">Pounds</span>
+<span class="mf">4.</span> <span class="n">Pounds</span> <span class="n">to</span> <span class="n">Kilograms</span>
+<span class="mf">5.</span> <span class="n">Celsius</span> <span class="n">to</span> <span class="n">Fahrenheit</span>
+<span class="mf">6.</span> <span class="n">Fahrenheit</span> <span class="n">to</span> <span class="n">Celsius</span>
+<span class="n">Which</span> <span class="n">conversion</span> <span class="n">would</span> <span class="n">you</span> <span class="n">like</span> <span class="n">to</span> <span class="n">do</span><span class="err">?</span> <span class="mi">6</span>
+<span class="n">Enter</span> <span class="n">temperature</span> <span class="ow">in</span> <span class="n">fahrenheit</span><span class="p">:</span> <span class="mi">98</span>
+<span class="n">Temperature</span> <span class="ow">in</span> <span class="n">celsius</span><span class="p">:</span> <span class="mf">36.66666666666667</span>
+<span class="o">&gt;&gt;&gt;</span>
+</pre></div>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Finding-linear-correlation">Finding linear correlation<a class="anchor-link" href="#Finding-linear-correlation">&#182;</a></h3><div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> 
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mf">6.1</span><span class="p">,</span> <span class="mf">7.9</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">find_corr_x_y</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="mf">0.9995411791453812</span>
+</pre></div>
+
+</div>
+</div>
+</div><aside class="notes">
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>So, that was Python and it's standard libraries. When you bring in third party libraries to the mix, Python becomes a seriously fancy calculator.</p>
+<p>Who has heard about SymPy?</p>
+<p>You can give it algebraic expressions to a function and a graph will be created for you.</p>
+<p>You can give an equation and out comes the solutions for that equation.</p>
+<p>We can even solve calculus problems.</p>
+
+</div>
+</div>
+</div>
+</aside></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Python---a-really-fancy-calculator">Python - a really fancy calculator<a class="anchor-link" href="#Python---a-really-fancy-calculator">&#182;</a></h3><p>SymPy - a pure Python symbolic math library</p>
+<p><em>from sympy import awesomeness</em>  - don't try that :)</p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Create graphs from algebraic expressions</span>
+
+<span class="kn">from</span> <span class="nn">sympy</span> <span class="k">import</span> <span class="n">Symbol</span><span class="p">,</span> <span class="n">plot</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">Symbol</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">plot</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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
+rYZ86y14+204+2zfFUlF0qySEHrjDbc0PjtbOwtGItlnlWza5FojVau69sghjt2UYNOsklTQvr2b
+cZKdDYMHw969visSX5Yvh/POcwtrZs9WaKcKBXdINW4M774LGza49smmTb4rkkR75RW3p/v997vZ
+I9osKnUouEPs5JNh4kS3z8m558LSpb4rkkSwFh56yO1nM2OGNiVLRdqrJOSqVHGjrbZt3dawo0fr
+H3Iy27wZ+vVz/ezFi900UUk9GnEniR493EyTESPcOZY7dviuSOLtvfegdWu3qvappxTaqUzBnUSa
+N4e8PKhWzW0o9OmnviuSeLAWHn3UPcsYPdrN1T7mGN9ViU+aDpiErHVnCP7hD24E3r9/au9TEebp
+gPtbI198Abm58KMf+a5IKoCmA4oL6QED3GKM8ePhmmvgm298VyXRev11uOIKOP10WLRIoS3/peBO
+Yk2bugdYGRlunu+CBb4rkkhs2eK2Yr3pJvjTn+Dhh9UakR9ScCe5Y45x+3k/8QTceacbiW/e7Lsq
+OZwFC6BlS7eN78cfu5lCImUpuFPEpZe6WSeVK7t53y+/7LsiKe37791eI9dfD48/7s6E1CpIORwF
+dwo56STX837uObj3XujeHdat812VvP46tGkD333nRtmXX+67Igk6BXcK+tnP4MMP3eHEZ5/tRncl
+Jb6rSj1ffOG+ed5yCzzyiJubXauW76okDBTcKerYY+GBB9xo78033UZFb7/tu6rUsH27O0rsnHPc
+N85PPlEvW6KjedxCSYlrnwweDOefDyNHwpln+q4qfoIyj9tamDXLHXTQurXbb+SMM3xXJQGgedwS
+vUqVoHdvt9Jy/4ZVgwdr9kk8/etfbjveCRPc4qgXXlBoS+wU3HLAcce5ecMffQQ7d0Jmpjt1Z8sW
+35WF10cfwZVXQs+ebsbI7NnQsaPvqiTsFNxykPR0N/f7rbcgPx8aNoScHJ0yH42PPnLz5rt0cUG9
+YoVbUFNF+3FKHKjHLUeVn+8epm3Z4tooAwdCWprvqiKXqB63te4Bb06O2xv99793+8TUqFHht5Zw
+i7rHreCWiH36KYwd6841vPpq95CtRQvfVR1dRQf3zp3w0kvuUIMlS1xg33CDm7kjEgEFt1S8b75x
+J+889hhcdplrBXTrBtWr+67s0CoquP/zH/eg8e9/d8vUf/tbt3hGR4hJlBTckji7drnpbU884Tb5
+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
+CLwYM8wAAAAASUVORK5CYII=
+"
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Solve equations</span>
+
+<span class="kn">from</span> <span class="nn">sympy</span> <span class="k">import</span> <span class="n">solve</span><span class="p">,</span> <span class="n">Symbol</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">Symbol</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">solve</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[13]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[-1/2]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Limits</span>
+
+<span class="kn">from</span> <span class="nn">sympy</span> <span class="k">import</span> <span class="n">Symbol</span><span class="p">,</span> <span class="n">Limit</span><span class="p">,</span> <span class="n">sin</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">Symbol</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">Limit</span><span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">doit</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[24]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>1</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Derivative</span>
+
+<span class="kn">from</span> <span class="nn">sympy</span> <span class="k">import</span> <span class="n">Symbol</span><span class="p">,</span> <span class="n">Derivative</span><span class="p">,</span> <span class="n">sin</span><span class="p">,</span> <span class="n">init_printing</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">Symbol</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">init_printing</span><span class="p">()</span>
+<span class="n">Derivative</span><span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">doit</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[2]:</div>
+
+
+<div class="output_latex output_subarea output_execute_result">
+$$\left(\frac{\left(2 x + 1\right) \cos{\left (x \right )}}{\sin{\left (x \right )}} + 2 \log{\left (\sin{\left (x \right )} \right )}\right) \sin^{2 x + 1}{\left (x \right )}$$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Indefinite integral</span>
+
+<span class="kn">from</span> <span class="nn">sympy</span> <span class="k">import</span> <span class="n">Symbol</span><span class="p">,</span> <span class="n">Integral</span><span class="p">,</span> <span class="n">sqrt</span><span class="p">,</span> <span class="n">sin</span><span class="p">,</span> <span class="n">init_printing</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">Symbol</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">init_printing</span><span class="p">()</span>
+<span class="n">Integral</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">.</span><span class="n">doit</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[16]:</div>
+
+
+<div class="output_latex output_subarea output_execute_result">
+$$\frac{2 x^{\frac{3}{2}}}{3}$$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Definite integral</span>
+
+<span class="kn">from</span> <span class="nn">sympy</span> <span class="k">import</span> <span class="n">Symbol</span><span class="p">,</span> <span class="n">Integral</span><span class="p">,</span> <span class="n">sqrt</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">Symbol</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">Integral</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span><span class="o">.</span><span class="n">doit</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[19]:</div>
+
+
+<div class="output_latex output_subarea output_execute_result">
+$$\frac{4 \sqrt{2}}{3}$$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div><aside class="notes">
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>I will pause for a moment now. In the first two slides, we have seen how Python can be a super awesome calculator. What does that buy us? We have now been able to show that you can make computer programs literally do your homework. Write a program to do your work once and you will never have to make those lengthy calculations yourselves. Can we use Python to do more?</p>
+<p>Let's continue.</p>
+
+</div>
+</div>
+</div>
+</aside></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<center><h1>Can we do more than write smart calculators?</h1></center>
+</div>
+</div>
+</div><aside class="notes">
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Python can be more than a super powerful calculator. We can use it to enhance the learning experience of other subjects. Next, I have three examples including a demo. First up, a video of a projectile motion. This program uses matplotlib's animation API to create a basic animation of a projectile motion - a fairly common subject introduced in introductory Physics. The program which is linked asks for the angle of projection and speed and then draws the trajectory of the projectile. Just by running the program multiple times, we can see how the trajectory changes. We don't have to go outside and start throwing balls..</p>
+<p>Next, we will put Jupyter Notebook's interactive widgets to good effect by drawing a Barnsley Fern. Let's see how the demo goes.</p>
+<p>Next, with the help of basemap, we can draw places on a world map like we would draw points on a graph paper.</p>
+<p>I know I would be excited if someone was showing me all these cool things when I was learning these things!</p>
+
+</div>
+</div>
+</div>
+</aside></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Python---Making-other-subjects-more-lively">Python - Making other subjects more lively<a class="anchor-link" href="#Python---Making-other-subjects-more-lively">&#182;</a></h3><p><img align="center" src="images/collage1.png"></img></p>
+<ul>
+<li><p>matplotlib</p>
+</li>
+<li><p>basemap</p>
+</li>
+<li><p>Interactive Jupyter Notebooks</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Bringing-Science-to-life">Bringing Science to life<a class="anchor-link" href="#Bringing-Science-to-life">&#182;</a></h4><p><em>Animation of a Projectile motion</em> <a href="https://github.com/doingmathwithpython/pycon-us-2016/blob/master/py-files/projectile_animation.py">(Python Source)</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">YouTubeVideo</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s2">&quot;8uWRVh58KdQ&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[3]:</div>
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+
+        <iframe
+            width="400"
+            height="300"
+            src="https://www.youtube.com/embed/8uWRVh58KdQ"
+            frameborder="0"
+            allowfullscreen
+        ></iframe>
+        
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Exploring-Fractals-in-Nature">Exploring Fractals in Nature<a class="anchor-link" href="#Exploring-Fractals-in-Nature">&#182;</a></h4><p><em>Interactively drawing a Barnsley Fern</em> <a href="https://github.com/doingmathwithpython/pycon-us-2016/blob/master/notebooks/Interactive%20Barnsley%20Fern.ipynb">(Notebook)</a></p>
+<p><img align="center" src="images/fern.jpg" width="400" ></img></p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="The-world-is-your-graph-paper">The world is your graph paper<a class="anchor-link" href="#The-world-is-your-graph-paper">&#182;</a></h4><p><em>Showing places on a digital map</em> <a href="https://github.com/doingmathwithpython/pycon-us-2016/blob/master/notebooks/Maps%20using%20Basemap%20-%20demo.ipynb">(Notebook)</a></p>
+
+</div>
+</div>
+</div><aside class="notes">
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Next, I would like to talk about my book "Doing Math with Python". My idea was attractive enough to get it published by No Starch Press which makes me hope that I am probably onto something.</p>
+<p>Has anybody read my book? What do you think of it? You have read it and came to my talk? I am feeling better :)</p>
+<p>I discuss all of the topics I discuss today in my talk. In addition, I discuss sets, probability and random numbers and descriptive statistics.</p>
+<p>It's being translated into several non-English languages.</p>
+<p>The reviews/feedback so far has been really positive. I don't have any first hand involvement in teaching, so it's very appreciative of people to share their viewpoints with me.</p>
+
+</div>
+</div>
+</div>
+</aside></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Book:-Doing-Math-With-Python">Book: Doing Math With Python<a class="anchor-link" href="#Book:-Doing-Math-With-Python">&#182;</a></h3><p><img align="center" src="images/dmwp-cover.png" href="https://doingmathwithpython.github.io"></img></p>
+<p>Overview</p>
+<ul>
+<li><p>All of what I have discussed so far</p>
+</li>
+<li><p>In addition: Descriptive statistics, Sets and Probability, Random numbers</p>
+</li>
+</ul>
+<p>Published by <a href="https://www.nostarch.com/doingmathwithpython">No Starch Press</a> in August, 2015.</p>
+<p><em>Upcoming/In-progress translations</em>: Simplified Chinese, Japanese, French and Korean.</p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Comments">Comments<a class="anchor-link" href="#Comments">&#182;</a></h4><blockquote><p>Saha does an excellent job providing a clear link between Python and upper-level math concepts, and demonstrates how Python can be transformed into a mathematical stage. This book deserves a spot on every geometry teacher’s bookshelf.</p>
+</blockquote>
+<p><a href="http://www.slj.com/2016/05/collection-development/read-watch-alikes/coding-lets-begin/#_">School Library Journal</a></p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<blockquote><p>Outstanding guide to using Python to do maths. Working back through my undergrad maths using Python.</p>
+</blockquote>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<blockquote><p>Saha does an excellent job providing a clear link between Python and upper-level math concepts, and demonstrates how Python can be transformed into a mathematical stage.</p>
+</blockquote>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<blockquote><p>This book is highly recommended for the high school or college student and anyone who is looking for a more natural way of programming math and scientific functions</p>
+</blockquote>
 
 </div>
 </div>
 </div></div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>Using <font color="#00534e">docker-machine</font> commands, you can start, inspect, stop, and restart a managed host, upgrade the Docker client and daemon, and configure a Docker client to talk to your host.</li>
+<blockquote><p>As a teacher I highly recommend this book as a way to work with someone in learning both math and programming</p>
+</blockquote>
+
+</div>
+</div>
+</div><aside class="notes">
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Okay, so that's great. We have successfully used Python to make the learning experience of young learners more fun and immediately applicable. Can we derive more benefit from doing that? Like something for the future? We all love doing things for the future, don't we?</p>
+<p>I think yes, i think if we teach young learners the things we have discussed today, it is a great base for someone wanting to go into data science or machine learning.</p>
+<p>Statistics and visualising data are two very key factors of data science.</p>
+<p>Differential calculus and specifically the gradient descent method is a simple but useful optimization method used in Machine Learning. Let's see a demo of using gradient descent to find the minimum value of a function.</p>
+<p>Now, let's apply gradient descent as an optimizer in a Linear Regression problem.</p>
+
+</div>
+</div>
+</div>
+</aside></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Great-base-for-the-future">Great base for the future<a class="anchor-link" href="#Great-base-for-the-future">&#182;</a></h3><p><em>Statistics and Graphing data</em> -&gt; <em>Data Science</em></p>
+<p><em>Differential Calculus</em> -&gt; <em>Machine learning</em></p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Application-of-differentiation">Application of differentiation<a class="anchor-link" href="#Application-of-differentiation">&#182;</a></h3><p>Use gradient descent to find a function's minimum value <a href="https://github.com/doingmathwithpython/pycon-us-2016/blob/master/notebooks/Gradient%20Descent.ipynb">(Notebook)</a></p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Predict-the-college-admission-score-based-on-high-school-math-score">Predict the college admission score based on high school math score<a class="anchor-link" href="#Predict-the-college-admission-score-based-on-high-school-math-score">&#182;</a></h3><p>Use gradient descent as the optimizer for single variable linear regression model <a href="https://github.com/doingmathwithpython/pycon-us-2016/blob/master/notebooks/Simple%20Linear%20Regression.ipynb">(Notebook)</a></p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Advanced-libraries">Advanced libraries<a class="anchor-link" href="#Advanced-libraries">&#182;</a></h3><ul>
+<li><p><a href="https://scipy.org">scipy</a></p>
+</li>
+<li><p><a href="http://www.numpy.org/">numpy</a></p>
+</li>
+<li><p><a href="http://scikit-learn.org/stable/">scikit-learn</a></p>
+</li>
+<li><p><a href="http://pandas.pydata.org/">pandas</a></p>
+</li>
+<li><p><a href="http://statsmodels.sourceforge.net/">Statsmodels</a></p>
+</li>
 </ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Dialogue">Dialogue<a class="anchor-link" href="#Dialogue">&#182;</a></h3><p>Questions, Thoughts, comments, discussions?</p>
+<h4 id="Online">Online<a class="anchor-link" href="#Online">&#182;</a></h4><ul>
+<li><p>Twitter: @echorand</p>
+</li>
+<li><p>Email: amitsaha.in@gmail.com</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="PyCon-Special!">PyCon Special!<a class="anchor-link" href="#PyCon-Special!">&#182;</a></h3><p><em>Use PYCONMATH code to get 30% off "Doing Math with Python" from <a href="https://www.nostarch.com/doingmathwithpython">No Starch Press</a></em></p>
+<p><img align="center" src="images/dmwp-cover.png" href="https://doingmathwithpython.github.io"></img></p>
+<p>(Valid from  May 26th - June 8th)</p>
+<p>Book Signing - May 31st - 2.00 PM - No Starch Press booth</p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Acknowledgements">Acknowledgements<a class="anchor-link" href="#Acknowledgements">&#182;</a></h3><p>PyCon US Education Summit team for inviting me</p>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Thanks to PyCon US for reduced registration rates</p>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Massive thanks to my employer, Freelancer.com for sponsoring my travel and stay</p>
 
 </div>
 </div>
 </div></div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<div align="center">
-    <h2 style="color:#810000; font-weight:bold;">How <font color="black">docker-machine</font> works</h2>
-    <br/>
-    <img src="https://docs.docker.com/machine/img/machine.png" />
+<h3 id="Links">Links<a class="anchor-link" href="#Links">&#182;</a></h3><ul>
+<li><p><a href="http://www.oreilly.com/pub/e/3712">Upcoming O'Reilly Webcast</a></p>
+</li>
+<li><p><a href="https://nostarch.com/doingmathwithpython">Doing Math with Python</a></p>
+</li>
+<li><p><a href="https://doingmathwithpython.github.io">Doing Math with Python Blog</a></p>
+</li>
+<li><p><a href="https://github.com/doingmathwithpython">Doing Math with Python on GitHub</a></p>
+</li>
+</ul>
+
 </div>
 </div>
-</div>
-</div></section></section><section><section><div align="center">
-<h2 style="color:#a70000; font-weight:bold;">Ain't it magic!</h2>
-
-
-<img src="https://camo.githubusercontent.com/da6ba2c9867e638570013de800d866927d10eef3/687474703a2f2f7777772e7265616374696f6e676966732e636f6d2f722f6d67632e676966" height="400px" width="600px"/>
-<div></section></section><section><section><div class="divider_h1" align="center">
-<h1 style="font-weight:bold;"><font color="#5ea774">DOCKER + FLASK<font></h1>
-</div></section></section><section><section><div align="center">
-<h2 style="color:#a70000; font-weight:bold;">We done!</h2>
-
-
-<iframe src="https://giphy.com/embed/Mp4hQy51LjY6A" width="600" height="400" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/smile-done-Mp4hQy51LjY6A">via GIPHY</a></p>
-<div></section></section><section><section><div class="divider_h1" align="center">
-<h1 style="font-weight:bold;"><font color="#5ea774">QUESTIONS?<font></h1>
-</div></section></section><section><section><div align="center">
-<div class="divider_h1">
-<h2 style="color:#a70000; font-weight:bold;">Code and Slides for this talk</h2>
-</div>
-<p>&nbsp;</p>
-<h4 style="text-transform: lowercase; font-weight:bold;">Code: <font color="#0088b2">https://github.com/pratos/datahack2017-workshop-av</font></h4>
-<h4 style="text-transform: lowercase; font-weight:bold;">Slides: <font color="#00534e">https://pratos.github.io/datahack2017-workshop-av</font></h4>
-
-<p>&nbsp;</p>
-<div class="divider_h1">
-<h2 style="color:#a70000; font-weight:bold;">Contact me via</h2>
-</div>
-<h4 style="text-transform: lowercase; font-weight:bold;">Mail: <font color="#0088b2">mail@pratos.in</font></h4>
-<h4 style="text-transform: lowercase; font-weight:bold">Tweet: <font color="#0088b2">@prthmshs</font></h4>
-<p>Raise an issue in the github repo.</p>
 </div></section></section>
 </div>
 </div>

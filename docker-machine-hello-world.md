@@ -16,7 +16,7 @@ All this happens in your local system. In our use-case, we need to manage `machi
 
 To reference the various cloud providers, we have drivers: Listed [here](https://docs.docker.com/machine/drivers/)
 
-`docker-machine` Example: [Here](https://docs.docker.com/machine/examples/ocean/)
+`docker-machine` __Initializing VM in Cloud Example:__ [Here](https://docs.docker.com/machine/examples/ocean/)
 
 - `docker-machine` on __DigitalOcean__:
     * Login to your Digital Ocean account and navigate to the dashboard.
