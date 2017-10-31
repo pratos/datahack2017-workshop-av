@@ -8,9 +8,6 @@ from utils import PreProcessing
 app = Flask(__name__)
 
 
-#Logging
-
-
 @app.route('/predict', methods=['POST'])
 def apicall():
 	"""API Call
