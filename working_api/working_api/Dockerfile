@@ -27,3 +27,4 @@ WORKDIR $INSTALL_PATH
 #Command run on local system
 CMD ["python", "server.py"]
 
+

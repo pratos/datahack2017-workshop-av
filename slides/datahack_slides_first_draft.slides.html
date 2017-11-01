@@ -11853,7 +11853,20 @@ a.anchor-link {
 
 <div class="reveal">
 <div class="slides">
-<section><section><div align="center">
+<section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hi&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div></section></section><section><section><div align="center">
 <div>
     <h1 style="font-weight:bold">Machine Learning models in Production* using <br/>
     <font color="#a70000">Flask</font> & <font color="#00534e">Docker</font></h1></div>
@@ -11883,155 +11896,7 @@ a.anchor-link {
 
 
 <img src="http://www.maicar.com/GML/000Iconography/Hermes/slides/smi160.jpg" height="500px" width="500px"/>
-<div></section></section><section><section><div align="center">
-<h2 style="color:#a70000; font-weight:bold">Structure of Hack Session</h2>
-</div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li><p>How <font color="#00534e" style="font-weight:bold;">Flask</font> can be used to create an end-point quickly.</p></li>
-</ul>
-
-</div>
-</div>
-</div></div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li><p><font color="#00534e" style="font-weight:bold;">Demo</font> to wrap an ML Model.</p></li>
-</ul>
-
-</div>
-</div>
-</div></div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li><p><font color="#00534e" style="font-weight:bold;">Docker</font> and <font color="#00534e" style="font-weight:bold;">Docker Eco-System</font> basics</p></li>
-</ul>
-
-</div>
-</div>
-</div></div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li><p>Deploying the <font color="#00534e" style="font-weight:bold;">ML API</font></p></li>
-</ul>
-
-</div>
-</div>
-</div></div></section></section><section><section><div align="center">
-<h2 style="font-weight:bold;">To summarize things, we'll be playing <font color="#a70000">Professor Utonium</font> today!</h2>
-
-<img src="https://memegenerator.net/img/images/600x600/11556716/powerpuffgirls.jpg" />
-</div></section></section><section><section><div class="divider_h1" align="center">
-<h1 style="font-weight:bold;"><font color="#5ea774">DEMO: HELLO-WORLD<font></h1>
-</div></section></section><section><section><div align="center">
-<h2 style="color:#a70000; font-weight:bold;">Using Flask</h2>
-</div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Pros:">Pros:<a class="anchor-link" href="#Pros:">&#182;</a></h4><ul>
-<li><p>Pretty lightweight & easy to start with</p></li>
-</ul>
-
-</div>
-</div>
-</div></div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li><p>Great documentation.</p></li>
-</ul>
-
-</div>
-</div>
-</div></div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li><p>Nice little flask specific extras and flexibility to use other components.<p></li>
-</ul>
-
-</div>
-</div>
-</div></div></section><section><div align="center">
-<h2 style="color:#a70000; font-weight:bold;">Using Flask</h2>
-</div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Cons:">Cons:<a class="anchor-link" href="#Cons:">&#182;</a></h4><ul>
-<li><p>Implementing async is a problem since it isn't baked in the framework.</p></li>
-</ul>
-
-</div>
-</div>
-</div></div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li><p>Better, faster frameworks just to create web services like Falcon beat Flask hands down.</p></li>
-</ul>
-
-</div>
-</div>
-</div></div></section></section><section><section><div class="divider_h1" align="center">
-<h1 style="font-weight:bold;"><font color="#5ea774">DEMO:WRAPPING ML MODELS<font></h1>
-</div></section></section><section><section><div align="center">
-<h2 style="color:#a70000; font-weight:bold;">There are three important parts in constructing our wrapper function, <font color="black">apicall()</font></h2>
-</div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li><p>Getting the request data (for which predictions are to be made).</p></li>
-</ul>
-
-</div>
-</div>
-</div></div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li><p>Loading our pickled estimator.</p></li>
-</ul>
-
-</div>
-</div>
-</div></div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li><p><font color="#810000" style="font-weight:bold;">jsonify</font> our predictions and send the response back with status code: <font color="#810000" >200</font></p></li>
-</ul>
-
-</div>
-</div>
-</div></div></section></section><section><section><div class="divider_h1" align="center">
+<div></section></section><section><section><div class="divider_h1" align="center">
     <h1 style="font-weight:bold;"><font color="#5ea774">WHY DOCKER?<font></h1>
 </div></section></section><section><section><div align="center">
 <h2 style="color:#a70000; font-weight:bold">My Docker Story</h2>
