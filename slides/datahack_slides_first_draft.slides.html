@@ -11854,25 +11854,25 @@ a.anchor-link {
 <div class="reveal">
 <div class="slides">
 <section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hi&quot;</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div></section></section><section><section><div align="center">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div align="center">
 <div>
     <h1 style="font-weight:bold">Machine Learning models in Production* using <br/>
     <font color="#a70000">Flask</font> & <font color="#00534e">Docker</font></h1></div>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-</div></section></section><section><section><div align="center">
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div align="center">
 <div>
 <h2 style="color:#a70000;font-weight:bold;">About me</h2>
 </div>
@@ -11880,35 +11880,763 @@ a.anchor-link {
 <p style="font-weight:bold"><b>Prathamesh Sarang</b></p>
 <p style="color:#00534e;font-weight:bold"><b>Data Scientist @ Lemoxo Technologies</b></p>
 <p style="text-transform: lowercase; font-weight:bold"><b>Tweet me</b> <font color="#0088b2">@prthmshs</font></p>
-</div></section></section><section><section><div align="center">
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div align="center">
 <div class="divider_h1">
 <h2 style="color:#a70000; font-weight:bold">Code and Slides for this talk</h2>
 </div>
 <p>&nbsp;</p>
 <h4 style="text-transform: lowercase;font-weight:bold;">Code: <font color="#0088b2">https://github.com/pratos/datahack2017-workshop-av (Still private)</font></h4>
 <h4 style="text-transform: lowercase;font-weight:bold">Slides: <font color="#00534e">https://pratos.github.io/datahack2017-workshop-av(Not published)</font></h4>
-</div></section></section><section><section><div class="divider_h1" align="center">
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="divider_h1" align="center">
 <h1 style="font-weight:bold;"><font color="#5ea774">* WITH A REASON!<font></h1>
-</div></section></section><section><section><div align="center">
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div align="center">
 <h2 style="font-weight:bold;">The night(<font color="red">production</font>) is dark(<font color="red">dependencies</font>) and full of terrors(<font color="red">bugs</font>)</h2>
-</div></section></section><section><section><div align="center">
-<h2 style="color:#a70000; font-weight:bold">Afterlife of a Machine Learning Model</h2>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><div align="center"></p>
+<h2 style="color:#a70000; font-weight:bold">Afterlife of a Machine Learning Model</h2><p><img src="http://www.maicar.com/GML/000Iconography/Hermes/slides/smi160.jpg" height="500px" width="500px"/></p>
+<div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div align="center">
+<h1 style="color:#a70000; font-weight:bold">Problem Statement</h1>
+
+<h2>Writing an API to wrap Machine Learning Models and Deploy it.</h2>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div align="center">
+    <img src="https://raw.githubusercontent.com/pratos/datahack2017-workshop-av/master/slides/images/av-screenshot.png?token=AJ7KJLn5m9CqIYBt1Npy7cyPKoZdx27Nks5aBeYZwA%3D%3D" />
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div align="center">
+<h2 style="color:#a70000; font-weight:bold">Machine Learning Workflow (simplified) :</h2>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><strong>Getting the dataset, performing exploratory data analysis.</strong></li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><strong>Set a pre-processing pipeline and creating ML Models.</strong></li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><strong>Decide on the metrics &amp; iteratively modify our ML Model.</strong></li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><strong>Once that is done, we can run predictions on it.</strong></li>
+</ul>
+
+</div>
+</div>
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div align="center">
+<h2 style="color:#a70000; font-weight:bold">How do we deploy these ML Model now?</h2>
+<h3 style="color:#a70000; font-weight:bold">Python has a solution to it: Serialization!</h3>
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<blockquote><p>In computer science, in the context of data storage, serialization is the process of translating data structures or object state into a format that can be stored (for example, in a file or memory buffer, or transmitted across a network connection link) and reconstructed later in the same or another computer environment.</p>
+</blockquote>
+<p>In Python, pickling is a standard way to store objects and retrieve them as their original state. We'll take the help of an example to understand pickling!</p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div align="center">
+<h2 style="color:#a70000; font-weight:bold">Structure of the Hack Session</h2>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><strong>How <font color="#a70000;">Flask</font> can be used to create web end-point quickly.</strong></li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><strong>How to wrap an <font color="#a70000;">ML Model in an API</font>.</strong></li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><strong>What is <font color="#a70000;">Docker</font> &amp; how does it fit in here?</strong></li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><strong>Deploying the <font color="#a70000;">ML API to a Cloud Platform</font>.</strong></li>
+</ul>
+
+</div>
+</div>
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div align="center">
+<h2 style="font-weight:bold;">To summarize things, we'll be playing <font color="#a70000">Professor Utonium</font> today!</h2>
+
+<img src="https://memegenerator.net/img/images/600x600/11556716/powerpuffgirls.jpg" />
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div align="center">
+<h2 style="color:#a70000; font-weight:bold">What are APIs</h2>
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/1/10/Web_Programming_API.svg" />
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$Server-Side\;Code\;is\;ML\;API$$$$Client-Side\;Code\;is\;Web\;application/software\;system$$
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div align="center">
+<h2 style="color:#a70000; font-weight:bold">API First Approach</h2>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><strong>Creating APIs that can be robustly integrated with other applications without compromising on the current technology stack or having a steep learning curve learning another language.</strong></li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><strong>Productivity doesn't take a hit with just a need for the initial investment in learning a web framework to start off creating APIs.</strong></li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><strong>In Python, there's lot of these frameworks that helps one to create APIs.</strong></li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><strong>Choice for this hack session: <font color="#a70000">Flask</font></strong></li>
+</ul>
+
+</div>
+</div>
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="divider_h1" align="center">
+<h1 style="font-weight:bold;"><font color="#5ea774">DEMO: HELLO-WORLD<font></h1>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div align="center">
+<h2 style="color:#a70000; font-weight:bold">Starting off!</h2>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><strong>Installing Flask</strong></li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>pip install flask
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
 
 
-<img src="http://www.maicar.com/GML/000Iconography/Hermes/slides/smi160.jpg" height="500px" width="500px"/>
-<div></section></section><section><section><div class="divider_h1" align="center">
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Requirement already satisfied: flask in /Users/pratos/miniconda3/envs/datahack/lib/python3.6/site-packages
+Requirement already satisfied: Jinja2&gt;=2.4 in /Users/pratos/miniconda3/envs/datahack/lib/python3.6/site-packages (from flask)
+Requirement already satisfied: Werkzeug&gt;=0.7 in /Users/pratos/miniconda3/envs/datahack/lib/python3.6/site-packages (from flask)
+Requirement already satisfied: click&gt;=2.0 in /Users/pratos/miniconda3/envs/datahack/lib/python3.6/site-packages (from flask)
+Requirement already satisfied: itsdangerous&gt;=0.21 in /Users/pratos/miniconda3/envs/datahack/lib/python3.6/site-packages (from flask)
+Requirement already satisfied: MarkupSafe&gt;=0.23 in /Users/pratos/miniconda3/envs/datahack/lib/python3.6/site-packages (from Jinja2&gt;=2.4-&gt;flask)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div align="center">
+<h2 style="color:#a70000; font-weight:bold">First Flask Application</h2>
+
+<img src="https://raw.githubusercontent.com/pratos/datahack2017-workshop-av/master/slides/images/flask_helloworld.png?token=AJ7KJHNgKv7WeT5pCncmydVI5dnMxhxWks5aBe5NwA%3D%3D" />
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div align="center">
+<h2 style="color:#a70000; font-weight:bold;">PROS</h2>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><strong>Pretty lightweight &amp; easy to start with, has a small overall footprint.</strong></li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><strong>The idea of Flask is to build a good foundation for all applications. Everything else is up to you or extensions.</strong></li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><strong>Great documentation.</strong></li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><strong>Iteration Speed</strong></li>
+</ul>
+
+</div>
+</div>
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div align="center">
+<h2 style="color:#a70000; font-weight:bold;">CONS</h2>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><strong>Better, faster frameworks just to create web services like Falcon beat Flask hands down.</strong></li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><strong>Doesn't provide High performance Async IO out of the box.</strong></li>
+</ul>
+
+</div>
+</div>
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div align="center">
+<h2 style="color:#a70000; font-weight:bold">Structure of the Hack Session</h2>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><strong>How <font color="#a70000;">Flask</font> can be used to create web end-point quickly.</strong></li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><h4 style="color:#b2bdbb;">How to wrap an ML Model in an API.</h4></li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><h4 style="color:#b2bdbb;">What is Docker & how does it fit in here?</h4></li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><h4 style="color:#b2bdbb;">Deploying the ML API to a Cloud Platform.</h4></li>
+</ul>
+
+</div>
+</div>
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="divider_h1" align="center">
+    <h1 style="font-weight:bold;"><font color="#5ea774">DEMO:WRAPPING ML MODELS<font></h1>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div align="center">
+<h2 style="color:#a70000; font-weight:bold;">Quick Recap</h2>
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/1/10/Web_Programming_API.svg" />
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div align="center">
+<h2 style="color:#a70000; font-weight:bold;">API VERBS</h2>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><strong>GET</strong>: The HTTP GET method is used to <strong>read</strong> (or retrieve) a representation of a resource.</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><strong>POST</strong>: The POST verb is most-often utilized to <strong>create</strong> new resources. In particular, it's used to create subordinate resources. </li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><strong>PUT</strong>: PUT is most-often utilized for <strong>update</strong> capabilities, PUT-ing to a known resource URI with the request body containing the newly-updated representation of the original resource.</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><strong>DELETE</strong>: DELETE is pretty easy to understand. It is used to <strong>delete</strong> a resource identified by a URI.</li>
+</ul>
+
+</div>
+</div>
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div align="center">
+<h2 style="color:#a70000; font-weight:bold;">Client Side Code</h2>
+
+<img src="https://raw.githubusercontent.com/pratos/datahack2017-workshop-av/master/slides/images/client_code.png?token=AJ7KJLY6mhlcTp__JuNREzl1xFaIlGjOks5aBhYUwA%3D%3D" />
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div align="center">
+<h2 style="color:#a70000; font-weight:bold;">Server Side Code</h2>
+
+<h4>There are three important parts in constructing our wrapper function, <font color="black">apicall()</font></h4>
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><strong>Getting the request data (for which predictions are to be made).</strong></li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/pratos/datahack2017-workshop-av/master/slides/images/ml_api1.png?token=AJ7KJEXlH_JX0w7D6OWzaSiJ5r6T_ahwks5aBfaOwA%3D%3D" alt=""></p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><strong>Loading our pickled estimator and do predictions:</strong></li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/pratos/datahack2017-workshop-av/master/slides/images/ml_api2.png?token=AJ7KJM8JxnAs5KO3Dx8Mm-KV8nRsVMnqks5aBfbhwA%3D%3D" alt=""></p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><strong><font color="#810000" style="font-weight:bold;">jsonify</font> our predictions and send the response back with status code: <font color="#810000" >200</font></strong></li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/pratos/datahack2017-workshop-av/master/slides/images/ml_api3.png?token=AJ7KJKflZl2V14Kuk1pGsb1265Ay2gxoks5aBfcFwA%3D%3D" alt=""></p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><strong>Small Addition: Error Handling</strong></li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/pratos/datahack2017-workshop-av/master/slides/images/ml_api_error_4.png?token=AJ7KJDaIyq4u1Gq1OyKUQMFokPDDomjjks5aBfdFwA%3D%3D" alt=""></p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="https://raw.githubusercontent.com/pratos/datahack2017-workshop-av/master/slides/images/custom_estimator.png?token=AJ7KJFueCptVxMQg4jsTW5jbna06m7Qwks5aBgRTwA%3D%3D" height="600px;"/></p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div align="center">
+<h2 style="color:#a70000; font-weight:bold">Structure of the Hack Session</h2>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><strong>How <font color="#a70000;">Flask</font> can be used to create web end-point quickly.</strong></li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><strong>How to wrap an <font color="#a70000;">ML Model in an API</font>.</strong></li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><h4 style="color:#b2bdbb;">What is Docker & how does it fit in here?</h4></li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><h4 style="color:#b2bdbb;">Deploying the ML API to a Cloud Platform.</h4></li>
+</ul>
+
+</div>
+</div>
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="divider_h1" align="center">
     <h1 style="font-weight:bold;"><font color="#5ea774">WHY DOCKER?<font></h1>
-</div></section></section><section><section><div align="center">
-<h2 style="color:#a70000; font-weight:bold">My Docker Story</h2>
-
-
-<img src="https://i.ytimg.com/vi/203OAQYDKNw/maxresdefault.jpg" height="500px" width="600px"/>
-<div></section></section><section><section><div align="center">
-<h2 style="color:#a70000; font-weight:bold;">Learning Docker:Week 2</h2>
-
-
-<img src="http://pa1.narvii.com/6520/bef674a11cc0772b812cb91bbaa9082a4cea0285_hq.gif" height="400px" width="500px"/>
-<div></section></section><section><section>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><div align="center"></p>
+<h2 style="color:#a70000; font-weight:bold">My Docker Story</h2><p><img src="https://i.ytimg.com/vi/203OAQYDKNw/maxresdefault.jpg" height="500px" width="600px"/></p>
+<div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><div align="center">
+<img src="https://media.giphy.com/media/139K1zKfNGI24w/giphy-downsized-large.gif" height="500px" width="600px"/></p>
+<div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><div align="center"></p>
+<h2 style="color:#a70000; font-weight:bold;">Learning Docker:Week 2</h2><p><img src="http://pa1.narvii.com/6520/bef674a11cc0772b812cb91bbaa9082a4cea0285_hq.gif" height="400px" width="500px"/></p>
+<div>
+</div>
+</div>
+</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -11952,15 +12680,101 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div></section></section><section><section><div align="center">
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div align="center">
     <h2 style="color:#810000; font-weight:bold;">Docker Architecture</h2>
     <img src="https://docs.docker.com/engine/article-img/architecture.svg" height="600px;" width="850px;"/>
-</div></section></section><section><section><div class="divider_h1" align="center">
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="divider_h1" align="center">
 <h1 style="font-weight:bold;"><font color="#5ea774">DEMO: DOCKER HELLO-WORLD<font></h1>
-</div></section></section><section><section><div class="divider_h1" align="center">
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div align="center">
+<h2 style="color:#a70000; font-weight:bold">Structure of the Hack Session</h2>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><strong>How <font color="#a70000;">Flask</font> can be used to create web end-point quickly.</strong></li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><strong>How to wrap an <font color="#a70000;">ML Model in an API</font>.</strong></li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><strong>What is <font color="#a70000;">Docker</font> &amp; how does it fit in here?</strong></li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><h4 style="color:#b2bdbb;">Deploying the ML API to a Cloud Platform.</h4></li>
+</ul>
+
+</div>
+</div>
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="divider_h1" align="center">
 <h1 style="font-weight:bold;"><font color="#5ea774">DEPLOYING AS WEB ENDPOINT<font></h1>
-</div></section></section><section><section><div align="center">
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div align="center">
 <h2 style="color:#810000; font-weight:bold;">Introduction to docker-machine</h2>
+</div>
+</div>
+</div>
 </div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
@@ -11974,7 +12788,8 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>You can do this via <font color="#00534e">docker-machine</font>. What <font color="#00534e">docker-machine</font> is:</p>
+<p><strong>You can do this via <font color="#00534e">docker-machine</font>. What <font color="#00534e">docker-machine</font> is:</strong></p>
+
 </div>
 </div>
 </div><div class="fragment">
@@ -12011,21 +12826,344 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div></section></section><section><section><div align="center">
-<h2 style="color:#a70000; font-weight:bold;">Ain't it magic!</h2>
-
-
-<img src="https://camo.githubusercontent.com/da6ba2c9867e638570013de800d866927d10eef3/687474703a2f2f7777772e7265616374696f6e676966732e636f6d2f722f6d67632e676966" height="400px" width="600px"/>
-<div></section></section><section><section><div class="divider_h1" align="center">
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="divider_h1" align="center">
 <h1 style="font-weight:bold;"><font color="#5ea774">DOCKER + FLASK<font></h1>
-</div></section></section><section><section><div align="center">
-<h2 style="color:#a70000; font-weight:bold;">We done!</h2>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div align="center">
+<h2 style="color:#a70000; font-weight:bold;">Dockerizing our ML API</h2>
+<h3 style="color:#a70000; font-weight:bold;">Baking a Cake!</h3>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>tree ../working_api/working_api/
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
 
 
-<iframe src="https://giphy.com/embed/Mp4hQy51LjY6A" width="600" height="400" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/smile-done-Mp4hQy51LjY6A">via GIPHY</a></p>
-<div></section></section><section><section><div class="divider_h1" align="center">
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>../working_api/working_api/
+├── __init__.py
+├── __pycache__
+│   └── utils.cpython-36.pyc
+├── flask_api.yml
+├── models
+│   └── model_v1.pk
+├── requirements.txt
+├── server.py
+└── utils.py
+
+2 directories, 7 files
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Just like Sauron from Lord of the Rings, there's just one <em>Dockerfile</em> to <strong>Dockerize 'em all</strong>.</li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Add <em>Dockerfile</em>, at the root of the ML API folder:</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>touch ../working_api/working_api/Dockerfile
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>tree ../working_api/working_api/
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>../working_api/working_api/
+├── Dockerfile
+├── __init__.py
+├── __pycache__
+│   └── utils.cpython-36.pyc
+├── flask_api.yml
+├── models
+│   └── model_v1.pk
+├── requirements.txt
+├── server.py
+└── utils.py
+
+2 directories, 8 files
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div align="center">
+<h2 style="color:#a70000; font-weight:bold;">Writing our Recipe!</h2>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><strong><em>Dockerfile</em> can be thought of a the recipe of a multi-layered cake to prepare Docker images.</strong></li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><strong>What would be the composition of this <em>Dockerfile</em>?</strong></li>
+</ul>
+
+</div>
+</div>
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="https://raw.githubusercontent.com/pratos/datahack2017-workshop-av/master/slides/images/dockerfile_img.png?token=AJ7KJDi5ixUrviNH01Fvf0EFIXvK4BJJks5aBfrjwA%3D%3D" alt=""></p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div align="center">
+<h2 style="color:#a70000; font-weight:bold;">Deploying the API</h2>
+<h3 style="color:#a70000; font-weight:bold;">Preparing our cake!</h3>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><div align="center"></p>
+<h2 style="color:#a70000; font-weight:bold;">We done!</h2><p><iframe src="https://giphy.com/embed/Mp4hQy51LjY6A" width="600" height="400" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/smile-done-Mp4hQy51LjY6A">via GIPHY</a></p></p>
+<div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div align="center">
+<h2 style="color:#a70000; font-weight:bold">Structure of the Hack Session</h2>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><strong>How <font color="#a70000;">Flask</font> can be used to create web end-point quickly.</strong></li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><strong>How to wrap an <font color="#a70000;">ML Model in an API</font>.</strong></li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><strong>What is <font color="#a70000;">Docker</font> &amp; how does it fit in here?</strong></li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><strong>Deploying the <font color="#a70000;">ML API to a Cloud Platform</font>.</strong></li>
+</ul>
+
+</div>
+</div>
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div align="center">
+<h2 style="color:#a70000; font-weight:bold">What can be improved?</h2>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><strong>Logging.</strong></li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><strong>Basic Authentication.</strong></li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><strong>Adding async using Celery+Redis/RabbitMQ.</strong></li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><strong>Usage of guincorn/uwsgi and docker-compose.</strong></li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><strong>Kubernetes/Docker Swarm.</strong></li>
+</ul>
+
+</div>
+</div>
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="divider_h1" align="center">
 <h1 style="font-weight:bold;"><font color="#5ea774">QUESTIONS?<font></h1>
-</div></section></section><section><section><div align="center">
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div align="center">
 <div class="divider_h1">
 <h2 style="color:#a70000; font-weight:bold;">Code and Slides for this talk</h2>
 </div>
@@ -12040,6 +13178,9 @@ a.anchor-link {
 <h4 style="text-transform: lowercase; font-weight:bold;">Mail: <font color="#0088b2">mail@pratos.in</font></h4>
 <h4 style="text-transform: lowercase; font-weight:bold">Tweet: <font color="#0088b2">@prthmshs</font></h4>
 <p>Raise an issue in the github repo.</p>
+</div>
+</div>
+</div>
 </div></section></section>
 </div>
 </div>
